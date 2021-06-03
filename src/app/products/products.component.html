@@ -1,0 +1,53 @@
+<!-- 
+Basic CSS Task: Implement a similar UI as given in Task_1.png file
+
+Angular Task: Create a Mini Angular Project with following Description [You can use either Angular Material or normal HTML/CSS/Js to implement different components]:
+i) Create a new angular project with angular routing
+
+ii) Add the following Component a)Home b)contactus c)Products 
+
+iii) Home component should be the default components, and have a sidenav that has button that route to contact us and products
+iv) In products have a have a table of items that are displayed by looping through a pre defined array (*ngFor) with following attributes in able => [S.no Product Name Product Code].
+V) Show only even indexed items from array in table. (*ngIf)
+Vi) Clicking the product should open a popup that should display some dummy data also use mat-dialog box of angular to implement it .
+
+vI) in contact us have three fields, name ,email , details . The data entered should log into the console upon clicking the submit button, email should have validations, refer to angular form control and the submit button should not work until all the fields are filled. -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+<h1>Welcome to Products</h1>
+
+<div class="sidenav">
+  <div class="logo">
+        
+    <img src="https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1569056705-banner.png" alt="">
+  </div>
+
+  <div class="fields">
+    <ul>
+      <li>
+        <a routerLink="/home">Home</a>
+      </li>
+
+      <li>
+        <a routerLink="/contactus">Contact Us</a>
+      </li>
+      <li>
+        <a routerLink="/products"> Products</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<table border="1" >
+    <tr>
+        <td>SNo</td>
+        <td>ProductName</td>
+        <td>ProductCode</td>
+    </tr>
+    <tr *ngFor='let item of data'>
+        <td>{{item.SNo}}</td>
+        <td>{{item.ProductName}}</td>
+        <td>{{item.ProductCode}}</td>
+    </tr>
+</table>
