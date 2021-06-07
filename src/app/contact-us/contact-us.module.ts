@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'
-import { from } from 'rxjs'
-
-
+import { MaterialModule } from '../material/material.module';
+import { AppComponent } from '../app.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppComponent
+  ],
   imports: [
-    CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ]
 })
 export class ContactUsModule { }

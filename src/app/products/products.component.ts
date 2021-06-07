@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
   selector: 'app-products',
@@ -6,36 +8,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  
+  opened=true
   data=[
     {
-      SNo:1,
-      ProductName:'Iphone',
-      ProductCode:'101'
+      ProductName:'Iphone 11',
+      ProductCode:101
     },
     {
-      SNo:2,
-      ProductName:'Samsung',
-      ProductCode:'102'
+      ProductName:'Samsung M31',
+      ProductCode:102
     },
     {
-      SNo:3,
-      ProductName:'Xaomi',
-      ProductCode:'103'
+      ProductName:'Xaomi Note',
+      ProductCode:103
     },
     {
-      SNo:4,
-      ProductName:'OnePlus',
-      ProductCode:'104'
+      ProductName:'OnePlus 8T',
+      ProductCode:104
     },
     {
-      SNo:5,
-      ProductName:'Nokia',
-      ProductCode:'105'
+      ProductName:'HTC Desire',
+      ProductCode:105
+    },
+    {
+      ProductName:'Blackberry',
+      ProductCode:106
+    },
+    {
+      ProductName:'Lenova',
+      ProductCode:107
+    },
+    {
+      ProductName:'Samsung A50',
+      ProductCode:108
+    },
+    {
+      ProductName:'Iphone 12',
+      ProductCode:109
+    },
+    {
+      ProductName:'Redmi',
+      ProductCode:110
     }
   ]
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
+
+  openDialog(){
+    this.dialog.open(DialogComponent)
+  }
+
 
   ngOnInit(): void {
   }

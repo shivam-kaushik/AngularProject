@@ -4,11 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'
 import { MaterialModule } from '../material/material.module';
 import { AppComponent } from '../app.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
+  entryComponents:[DialogComponent],
   imports: [
     FormsModule,
     MaterialModule,
@@ -16,4 +19,4 @@ import { AppComponent } from '../app.component';
     BrowserAnimationsModule
   ]
 })
-export class HomeModule { }
+export class ProductsModule { }

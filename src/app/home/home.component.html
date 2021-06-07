@@ -1,25 +1,24 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
-<h1>Welcome to Home</h1>
-
-<div class="sidenav">
-  <div class="logo">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode='side' [(opened)]= 'opened'>
+    <div class="logo">
         
-    <img src="https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1569056705-banner.png" alt="">
-  </div>
-
-  <div class="fields">
+      <img src="https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1569056705-banner.png" alt="">
+    </div>
     <ul>
       <li>
         <a routerLink="/home">Home</a>
       </li>
 
       <li>
-        <a routerLink="/contactus">Contact Us</a>
+        <a routerLink="/contactus">ContactUs</a>
       </li>
       <li>
         <a routerLink="/products"> Products</a>
       </li>
     </ul>
-  </div>
-</div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)='sidenav.toggle()'>Click Me!</button>
+    <h1>Welcome to Home</h1>
+  </mat-sidenav-content>
+</mat-sidenav-container>

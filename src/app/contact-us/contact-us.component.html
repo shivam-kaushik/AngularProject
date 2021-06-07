@@ -1,34 +1,46 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
-<h1>Welcome to Contact Us</h1>
-
-<div class="sidenav">
-  <div class="logo">
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode='side' [(opened)]= 'opened'>
+    <div class="logo">
         
-    <img src="https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1569056705-banner.png" alt="">
-  </div>
-
-  <div class="fields">
+      <img src="https://admission24.s3.ap-south-1.amazonaws.com/api_main/public/images/basic-info/1569056705-banner.png" alt="">
+    </div>
     <ul>
       <li>
         <a routerLink="/home">Home</a>
       </li>
 
       <li>
-        <a routerLink="/contactus">Contact Us</a>
+        <a routerLink="/contactus">ContactUs</a>
       </li>
       <li>
         <a routerLink="/products"> Products</a>
       </li>
     </ul>
-  </div>
-</div>
-<div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)='sidenav.toggle()'>Click Me!</button>
+    <h1>Welcome to Contact Us</h1>
+    <div>
+    <form (submit)="loginUser($event)">
 
-<form (submit)="loginUser($event)">
-    <input type="text" id="username" placeholder="Enter Name"><br><br>
-    <input type="text" id="email" placeholder="Enter Email"><br><br>
-    <input type="text" id="details" placeholder="Enter Details"><br><br>
-    <button type="submit">Submit</button>
-</form> 
-</div>
+        <mat-form-field floatLabel='auto' appearance='outline'>
+          <mat-label>Name</mat-label>
+          <input id="username" matInput required>
+          <mat-hint align='end'>Min 4 Characters</mat-hint>
+        </mat-form-field>
+        <mat-form-field floatLabel='auto' appearance='outline'>
+          <mat-label>Email</mat-label>
+          <input id="email" matInput required>
+          <mat-hint align='end'>Min 4 Characters</mat-hint>
+        </mat-form-field>
+        <mat-form-field floatLabel='auto' appearance='outline'>
+          <mat-label>Details</mat-label>
+          <input id="details" matInput required>
+          <mat-hint align='end'>Min 4 Characters</mat-hint>
+        </mat-form-field>
+        <button id='button' type="submit">Submit</button>
+    </form> 
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> 
+

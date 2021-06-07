@@ -7,7 +7,7 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-
+  opened=true
   @Output() parentComponent:EventEmitter<any>=new EventEmitter()
   form: any;
   formBuilder: any;
